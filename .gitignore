@@ -3,7 +3,14 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
-
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
 ### STS ###
 .settings/
 .apt_generated
