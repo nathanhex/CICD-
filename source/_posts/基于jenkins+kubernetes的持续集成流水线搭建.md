@@ -817,8 +817,12 @@ kubectl  apply -f  config.yaml -n jenkins
 
 ## 前端项目jenkinsfile
 
+Dockerfile示例：
+```dockerfile
+FROM nginx:1.23.3-alpine-slim
+COPY dist /usr/share/nginx/html
 
-
+```
 - 在项目根目录创建Jenkinsfile文件，内容如下：
 
 ```groovy
@@ -1122,6 +1126,25 @@ spec:
 五、使用阿里云oss作为静态网页的托管网站服务器，简化自建静态资源服务器的复杂度
 
 ## 后端项目jenkinsfile
+Dockerfile示例:
+```dockerfile
+FROM openjdk:8u322-jdk-oraclelinux8 as openjdk-8u212-jre-alpine-base
+
+WORKDIR /opt
+COPY target/*.jar /opt/app.jar
+
+RUN java -Djarmode=layertools -jar app.jar extract
+
+FROM openjdk:8u322-jdk-oraclelinux8
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
+WORKDIR /opt
+COPY --from=openjdk-8u212-jre-alpine-base opt/dependencies ./
+COPY --from=openjdk-8u212-jre-alpine-base opt/spring-boot-loader ./
+COPY --from=openjdk-8u212-jre-alpine-base opt/snapshot-dependencies ./
+COPY --from=openjdk-8u212-jre-alpine-base opt/application ./
+CMD [ "sh", "-c", "java $JAVA_OPTIONS org.springframework.boot.loader.JarLauncher $SPRING_OPTIONS" ]
+
+```
 
 在项目根目录创建Jenkinsfile文件，内容如下：
 
