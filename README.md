@@ -11,3 +11,7 @@ npm install hexo-cli -g
 ```
 ## 修复mkdown本地图片路径问题
 [修复说明](https://www.jianshu.com/p/bbbcbb7c4911)
+## 生成站点
+```shell
+hexo g .
+```

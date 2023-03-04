@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>openai gpt-3.5-turbo新模型支持 | 老丶黄的个人博客</title><meta name="author" content="老黄"><meta name="copyright" content="老黄"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="openai 新增了gpt-3.5-turbo模型，该模型可以像chatgpt网页一样的效果。可以记住上下文信息。官方提供了python和nodejs的sdk，我基于java的sdk写了一个demo  demo代码依赖：123456789101112131415161718192021&lt;dependencies&gt;    &lt;!--    openai的一个开源的java sdk库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openai gpt-3.5-turbo新模型支持">
+<meta property="og:url" content="https://nathanhex.github.io/CICD-Practice/2023/03/04/chatgpt-demo/index.html">
+<meta property="og:site_name" content="老丶黄的个人博客">
+<meta property="og:description" content="openai 新增了gpt-3.5-turbo模型，该模型可以像chatgpt网页一样的效果。可以记住上下文信息。官方提供了python和nodejs的sdk，我基于java的sdk写了一个demo  demo代码依赖：123456789101112131415161718192021&lt;dependencies&gt;    &lt;!--    openai的一个开源的java sdk库">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-04T04:44:54.308Z">
+<meta property="article:author" content="老黄">
+<meta property="article:tag" content="openai">
+<meta property="article:tag" content="chatgpt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/CICD-Practice/img/favicon.png"><link rel="canonical" href="https://nathanhex.github.io/CICD-Practice/2023/03/04/chatgpt-demo/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/CICD-Practice/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/CICD-Practice/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 老黄","link":"链接: ","source":"来源: 老丶黄的个人博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'openai gpt-3.5-turbo新模型支持',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-04 12:44:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/CICD-Practice/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/CICD-Practice/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/CICD-Practice/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/CICD-Practice/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/CICD-Practice/" title="老丶黄的个人博客"><img class="site-icon" src="/CICD-Practice/images/main-logo.jpg"/><span class="site-name">老丶黄的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/CICD-Practice/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">openai gpt-3.5-turbo新模型支持</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-03T16:00:00.000Z" title="发表于 2023-03-04 00:00:00">2023-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-04T04:44:54.308Z" title="更新于 2023-03-04 12:44:54">2023-03-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/CICD-Practice/categories/chatgpt/">chatgpt</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="openai gpt-3.5-turbo新模型支持"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>openai 新增了gpt-3.5-turbo模型，该模型可以像chatgpt网页一样的效果。可以记住上下文信息。官方提供了python和nodejs的sdk，我基于java的sdk写了一个demo</p>
+</blockquote>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><h2 id="代码依赖："><a href="#代码依赖：" class="headerlink" title="代码依赖："></a>代码依赖：</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    openai的一个开源的java sdk库，git地址是：https://github.com/TheoKanning/openai-java/tree/main </span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.theokanning.openai-gpt3-java<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>service<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.11.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.32<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.yun.chatgpt.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.theokanning.openai.completion.chat.ChatCompletionRequest;</span><br><span class="line"><span class="keyword">import</span> com.theokanning.openai.completion.chat.ChatMessage;</span><br><span class="line"><span class="keyword">import</span> com.theokanning.openai.service.OpenAiService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GPT3Demo</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> OpenAiService openAiService;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存放一个session的一组ChatMessage，</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, ArrayList&lt;ChatMessage&gt;&gt; sessionMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 控制对话的次数，当10轮对话20个chatmessage对象后强制重新开始一轮对话，</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">maxRounds</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">GPT3Demo</span><span class="params">(String token)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.openAiService = <span class="keyword">new</span> <span class="title class_">OpenAiService</span>(token);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">chat</span><span class="params">(String sessionId, String question)</span> &#123;</span><br><span class="line">        log.debug(<span class="string">&quot;ChatGPTBoot.chat sessionId: &#123;&#125;;que:&#123;&#125;&quot;</span>, sessionId, question);</span><br><span class="line">        ArrayList&lt;ChatMessage&gt; chatMessages = sessionMap.get(sessionId);</span><br><span class="line">        <span class="comment">//当对话10轮后强制重新开始对话</span></span><br><span class="line">        <span class="keyword">if</span> (chatMessages == <span class="literal">null</span> || chatMessages.size() &gt; maxRounds) &#123;</span><br><span class="line">            chatMessages = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">            sessionMap.put(sessionId, chatMessages);</span><br><span class="line">        &#125;</span><br><span class="line">        chatMessages.add(<span class="keyword">new</span> <span class="title class_">ChatMessage</span>(<span class="string">&quot;user&quot;</span>, question));</span><br><span class="line">        <span class="keyword">if</span> (log.isDebugEnabled()) &#123;</span><br><span class="line">            log.debug(<span class="string">&quot;ChatGPTBoot.chat sessionId=&#123;&#125;;chatMessages:&#123;&#125;&quot;</span>, sessionId,</span><br><span class="line">                    chatMessages.toArray());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//参数数目请查看readme</span></span><br><span class="line">        <span class="type">ChatCompletionRequest</span> <span class="variable">completionRequest</span> <span class="operator">=</span></span><br><span class="line">                ChatCompletionRequest.builder()</span><br><span class="line">                        .messages(chatMessages)</span><br><span class="line">                        .model(<span class="string">&quot;gpt-3.5-turbo&quot;</span>)</span><br><span class="line">                        .temperature(<span class="number">0.7</span>)</span><br><span class="line">                        .maxTokens(<span class="number">2500</span>)</span><br><span class="line">                        .topP(<span class="number">1.0</span>)</span><br><span class="line">                        .frequencyPenalty(<span class="number">0.0</span>)</span><br><span class="line">                        .stop(Arrays.asList(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot; Human:&quot;</span>, <span class="string">&quot; AI:&quot;</span>))</span><br><span class="line">                        .presencePenalty(<span class="number">0.0</span>)</span><br><span class="line">                        .build();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ArrayList&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;ChatMessage&gt; c2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        openAiService.createChatCompletion(completionRequest).getChoices().forEach(v -&gt; &#123;</span><br><span class="line">            <span class="type">ChatMessage</span> <span class="variable">message</span> <span class="operator">=</span> v.getMessage();</span><br><span class="line">            c2.add(message);</span><br><span class="line">            c.add(message.getContent());</span><br><span class="line">        &#125;);</span><br><span class="line">        chatMessages.addAll(c2);</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">&quot;%s&quot;</span>, c.toArray());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">GPT3Demo</span> <span class="variable">gpt3Demo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GPT3Demo</span>(<span class="string">&quot;your token&quot;</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sco</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;your question:&quot;</span>);</span><br><span class="line">        String question;</span><br><span class="line">        <span class="keyword">while</span> (sco.hasNext()) &#123;</span><br><span class="line">            question = sco.next();</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;quit&quot;</span>.equals(question) || <span class="string">&quot;exit&quot;</span>.equals(question)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">String</span> <span class="variable">a</span> <span class="operator">=</span> gpt3Demo.chat(<span class="string">&quot;1&quot;</span>, question);</span><br><span class="line">            System.out.println(<span class="string">&quot;boot:[&quot;</span> + a + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        sco.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="openai参数说明："><a href="#openai参数说明：" class="headerlink" title="openai参数说明："></a>openai参数说明：</h2><ul>
+<li>【max_tokens】integer 可选 默认值16<br>完成时要生成的最大token数量。</li>
+</ul>
+<p>提示的token计数加上max_tokens不能超过模型的上下文长度。大多数模型的上下文长度为2048个token（最新模型除外，支持4096个）。</p>
+<ul>
+<li>【temperature】number 可选 默认值1<br>使用什么样的采样温度，介于0和2之间。较高的值（如0.8）将使输出更加随机，而较低的值（例如0.2）将使其更加集中和确定。</li>
+</ul>
+<p>通常建议更改它或top_p，但不能同时更改两者。</p>
+<ul>
+<li>【top_p】number 可选 默认值1<br>一种用温度采样的替代品，称为核采样，其中模型考虑了具有top_p概率质量的token的结果。因此，0.1意味着只考虑包含前10%概率质量的token。</li>
+</ul>
+<p>通常建议改变它或temperature，但不能同时更改两者。</p>
+<ul>
+<li><p>【presence_penalty】number 可选 默认值0<br>取值范围：-2.0~2.0。<br>正值根据新token到目前为止是否出现在文本中来惩罚它们，这增加了模型谈论新主题的可能性。</p>
+</li>
+<li><p>【frequency_penalty】number 可选 默认值0<br>取值范围：-2.0~2.0。<br>正值根据迄今为止文本中的现有频率惩罚新token，从而降低了模型逐字重复同一行的可能性。</p>
+</li>
+<li><p>【best_of】integer 可选 默认值1<br>在服务器端生成best_of个完成，并返回“最佳”（每个token的日志概率最高）。结果无法流式传输。</p>
+</li>
+</ul>
+<p>与n一起使用时，best_of控制候选完成的数量，n指定要返回的数量–best_of必须大于n。</p>
+<p>注意：由于此参数会生成许多完成，因此它可以快速消耗token配额。小心使用并确保您对max_tokens和stop进行了合理的设置。</p>
+<ul>
+<li>【logit_bias】map 可选 默认值null<br>修改完成时出现指定token的可能性。</li>
+</ul>
+<p>接受将token（由其在GPT token生成器中的token ID指定）映射到从-100到100的相关偏差值的json对象。<br>您可以使用此token工具（适用于GPT-2和GPT-3）将文本转换为token ID。在数学上，偏差在采样之前被添加到模型生成的逻辑中。确切的效果因模型而异，但-1和1之间的值应该会降低或增加选择的可能性；-100或100这样的值应该导致相关token的禁止或独占选择。</p>
+<p>例如，可以传递｛“50256”：-100｝以防止生成&lt;|endoftext|&gt;的token。</p>
+<p><strong>完</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://nathanhex.github.io/CICD-Practice">老黄</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nathanhex.github.io/CICD-Practice/2023/03/04/chatgpt-demo/">https://nathanhex.github.io/CICD-Practice/2023/03/04/chatgpt-demo/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nathanhex.github.io/CICD-Practice" target="_blank">老丶黄的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/CICD-Practice/tags/openai/">openai</a><a class="post-meta__tags" href="/CICD-Practice/tags/chatgpt/">chatgpt</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/CICD-Practice/2023/02/05/%E5%9F%BA%E4%BA%8Ejenkins+kubernetes%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%90%AD%E5%BB%BA/" title="基于jenkins+kubernetes的持续集成流水线搭建"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/CICD-Practice/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">基于jenkins+kubernetes的持续集成流水线搭建</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/CICD-Practice/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">老黄</div><div class="author-info__description">天生我材必有用，千金散尽还复来</div></div><div class="card-info-data site-data is-center"><a href="/CICD-Practice/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/CICD-Practice/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/CICD-Practice/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/nathanhex"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#demo"><span class="toc-number">1.</span> <span class="toc-text">demo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%BE%9D%E8%B5%96%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">代码依赖：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">代码示例：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#openai%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">openai参数说明：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/03/04/chatgpt-demo/" title="openai gpt-3.5-turbo新模型支持"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="openai gpt-3.5-turbo新模型支持"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/03/04/chatgpt-demo/" title="openai gpt-3.5-turbo新模型支持">openai gpt-3.5-turbo新模型支持</a><time datetime="2023-03-03T16:00:00.000Z" title="发表于 2023-03-04 00:00:00">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/02/05/%E5%9F%BA%E4%BA%8Ejenkins+kubernetes%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%90%AD%E5%BB%BA/" title="基于jenkins+kubernetes的持续集成流水线搭建"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="基于jenkins+kubernetes的持续集成流水线搭建"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/02/05/%E5%9F%BA%E4%BA%8Ejenkins+kubernetes%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%90%AD%E5%BB%BA/" title="基于jenkins+kubernetes的持续集成流水线搭建">基于jenkins+kubernetes的持续集成流水线搭建</a><time datetime="2023-02-04T16:00:00.000Z" title="发表于 2023-02-05 00:00:00">2023-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/02/04/nexus-install/" title="nexus安装配置教程"><img src="/CICD-Practice/images/nexus-install-cover.png" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="nexus安装配置教程"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/02/04/nexus-install/" title="nexus安装配置教程">nexus安装配置教程</a><time datetime="2023-02-03T16:00:00.000Z" title="发表于 2023-02-04 00:00:00">2023-02-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/02/04/not-imagePullSecrets-pull/" title="配置免imagePullSecrets拉取私有仓库镜像"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="配置免imagePullSecrets拉取私有仓库镜像"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/02/04/not-imagePullSecrets-pull/" title="配置免imagePullSecrets拉取私有仓库镜像">配置免imagePullSecrets拉取私有仓库镜像</a><time datetime="2023-02-03T16:00:00.000Z" title="发表于 2023-02-04 00:00:00">2023-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 老黄</div><div class="footer_custom_text">欢迎来到老黄的<a href="https://nathanhex.github.io/CICD-Practice/">博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/CICD-Practice/js/utils.js"></script><script src="/CICD-Practice/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
