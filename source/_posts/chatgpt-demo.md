@@ -159,5 +159,6 @@ public class GPT3Demo {
 您可以使用此token工具（适用于GPT-2和GPT-3）将文本转换为token ID。在数学上，偏差在采样之前被添加到模型生成的逻辑中。确切的效果因模型而异，但-1和1之间的值应该会降低或增加选择的可能性；-100或100这样的值应该导致相关token的禁止或独占选择。
 
 例如，可以传递｛“50256”：-100｝以防止生成<|endoftext|>的token。
-
+## 完整的代码
+[https://github.com/nathanhex/chatgpt-demo](https://github.com/nathanhex/chatgpt-demo)
 **完**
