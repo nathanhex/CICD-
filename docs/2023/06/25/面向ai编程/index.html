@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>面向AI编程 | 老丶黄的个人博客</title><meta name="author" content="老黄"><meta name="copyright" content="老黄"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="AI焦虑症openai的chatGPT大流行后，国内一大批国产大模型跟进，让大模型的AI成为2023最火热的技术焦点。于是很多自媒体就开始了夸张的宣传，“你再不快点学习使用chatGPT,就要落伍了，要被淘汰了，要被AI取代了”。“快来报名，只要699，保你精通chatGPT,送账号”。这样的氛围下，假如自己现在的工作还没有用到AI，就感觉自己要被淘汰了，急得像热锅上的蚂蚁。大家似乎患上了一种AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向AI编程">
+<meta property="og:url" content="https://nathanhex.github.io/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="老丶黄的个人博客">
+<meta property="og:description" content="AI焦虑症openai的chatGPT大流行后，国内一大批国产大模型跟进，让大模型的AI成为2023最火热的技术焦点。于是很多自媒体就开始了夸张的宣传，“你再不快点学习使用chatGPT,就要落伍了，要被淘汰了，要被AI取代了”。“快来报名，只要699，保你精通chatGPT,送账号”。这样的氛围下，假如自己现在的工作还没有用到AI，就感觉自己要被淘汰了，急得像热锅上的蚂蚁。大家似乎患上了一种AI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-06-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-26T11:14:21.823Z">
+<meta property="article:author" content="老黄">
+<meta property="article:tag" content="openai">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/CICD-Practice/img/favicon.png"><link rel="canonical" href="https://nathanhex.github.io/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/CICD-Practice/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/CICD-Practice/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 老黄","link":"链接: ","source":"来源: 老丶黄的个人博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面向AI编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-26 19:14:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/CICD-Practice/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/CICD-Practice/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/CICD-Practice/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/CICD-Practice/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/CICD-Practice/" title="老丶黄的个人博客"><img class="site-icon" src="/CICD-Practice/images/main-logo.jpg"/><span class="site-name">老丶黄的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/CICD-Practice/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/CICD-Practice/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面向AI编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-24T16:00:00.000Z" title="发表于 2023-06-25 00:00:00">2023-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-26T11:14:21.823Z" title="更新于 2023-06-26 19:14:21">2023-06-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/CICD-Practice/categories/chatgpt/">chatgpt</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面向AI编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="AI焦虑症"><a href="#AI焦虑症" class="headerlink" title="AI焦虑症"></a>AI焦虑症</h1><p>openai的chatGPT大流行后，国内一大批国产大模型跟进，让大模型的AI成为2023最火热的技术焦点。<br>于是很多自媒体就开始了夸张的宣传，“你再不快点学习使用chatGPT,就要落伍了，要被淘汰了，<br>要被AI取代了”。“快来报名，只要699，保你精通chatGPT,送账号”。这样的氛围下，假如自己现在的工作还没有用到AI，<br>就感觉自己要被淘汰了，急得像热锅上的蚂蚁。大家似乎患上了一种AI焦虑症，感觉自己要被时代抛弃了。<br>于是赶紧掏出699购买课程，学习使用chatGPT。但是这时候会发现 ，AI并没有他们说的那么高大上。<br>大部分人付费学习后也就是把网上的示例试了一试。并不能在自己的工作中得到帮助。于是又开始焦虑了。</p>
+<h1 id="如何缓解AI焦虑症"><a href="#如何缓解AI焦虑症" class="headerlink" title="如何缓解AI焦虑症"></a>如何缓解AI焦虑症</h1><p>我们要知道AI确实能提高人类的生产效率，只是它目前还处于初期阶段，智能不足。<br>我个人认为我们已经处在了另一场工业革命的初期，这次工业革命的特点是，实现了将电能转换成了智能，<br>这个特点意味着，它会越来越智能。你现在之所以需要花699学习怎么使用它，不过是因为它还不够智能，<br>但是当他足够智能的时候，就不是你要学习怎么使用它，而是它要学习怎么理解你需求了。也就是你现在学不学怎么<br>使用它最后它都能让你用上。那么怎么正确看待AI未来取代人类的焦虑呢？焦虑的来源其实是对某个事务的未知，<br>未知会让人恐惧，恐惧产生焦虑。AI范畴太大，我建议程序员先了解chatGPT,了解它的能力，掌握使用它的思想，<br>这样就能大大缓解未知带来的焦虑了。我现在教大家一个利用AI能力的编程思想。学会了它想象空间就很大了。这个教程不用花699，只要花5分钟理解里面的思路。</p>
+<h1 id="什么是面向AI编程"><a href="#什么是面向AI编程" class="headerlink" title="什么是面向AI编程"></a>什么是面向AI编程</h1><p>面向AI编程是一种编程思想，就是利用AI的能力来完成软件功能。<br>copilot等AI编程助手的出现，AI独立编程指日可待，程序员可以借助AI工具帮自己轻松完成代码编写的任务。<br>这里更多的是使用AI来帮助编写代码或生成代码。我这里定义的面向AI编程是指：在程序里调用AI的能力，利用AI本身的能力来完成软件功能。</p>
+<h2 id="利用AI能力示例"><a href="#利用AI能力示例" class="headerlink" title="利用AI能力示例"></a>利用AI能力示例</h2><p>举个简单的例子：我最近开发一个微信公众号遇到的场景，<br>我后台预制了7到8个调教完美的AI机器人。每个机器人在自己领域里都非常专业，但是跨领域后<br>的回答就会很别扭，所有需要用户自行切换机器人。</p>
+<h3 id="程序实现机器人切换"><a href="#程序实现机器人切换" class="headerlink" title="程序实现机器人切换"></a>程序实现机器人切换</h3><p>在没有想明白怎么利用AI之前，我是这么做的：<br>我程序里预设了以下几个映射：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0=清空机器人预置</span><br><span class="line">1=儿童陪护</span><br><span class="line">2=英文翻译专家</span><br><span class="line">3=中文翻译专家</span><br><span class="line">4=LINUX_SHELL</span><br><span class="line">5=JAVASCRIPT_CONSOLE</span><br><span class="line">6=女朋友</span><br><span class="line">7=男朋友</span><br><span class="line">8=妈妈</span><br></pre></td></tr></table></figure>
+<p>用户回复：“预置机器人:2”或“预置机器人:3”等字符串，我通过精确匹配字符串，就可以切换机器人了。<br>但是这种做法非常程序化，不够智能，用户体验不好。用户必须知道机器人和数字的映射关系。用户可能输入错别字<br>或者标点符合全角半角切换。这些都会导致程序无法识别。</p>
+<h3 id="AI实现机器人切换"><a href="#AI实现机器人切换" class="headerlink" title="AI实现机器人切换"></a>AI实现机器人切换</h3><p>既然我们已经进入了AI智能时代了，当然得用更酷的方式来让用户设置机器人对吧！怎么才是最酷的呢？<br>当然是用更自然的聊天式语言来切换机器人了，比如用户说：“我想要一个女朋友”，“我家小宝宝需要你的陪伴”，“我想念我妈妈了”，<br>甚至有错别字，“我想要一个女盆友”。这些自然语言的处理如果使用程序判断，那就是天量的代码了，<br>但是如果利用AI。那就是很简单的一个api接口调用了。于是我使用的以下提示词完成任务：<br><img src="/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/img1.png" alt="面向ai编程/img1.png"><br>这样我让chatgpt返回了精确的机器人编号。我通过这个编号来切换机器人。这样用户就可以自由切换机器人了而不用局限于固定的用户输入。<br>这里我使用了一个思想，利用chatGTP的语言理解能力，将用户的自然语言转换成程序可以理解的指令。</p>
+<h2 id="其他应用场景"><a href="#其他应用场景" class="headerlink" title="其他应用场景"></a>其他应用场景</h2><p>以上示例里我利用了AI对信息的抽取映射能力，改变了用户和程序的交互方式。这种思想可以应用到很多场景。<br>我再说个使用场景：智能客服系统经常遇到一个场景，<br>用户可能有5到10种问法，但是他们都指向了同一个答案。没有ai的解决方式就是将这些问法都列出来，然后一一匹配到这个答案，<br>但是这种做法弊端很明显，就是很难枚举用户的所有问法，有时候用户输入错别字了也可能匹配不到答案。<br>有了ai以后，只要将部分问法和答案输入模型，ai自己就能根据已有问题和答案推断出很多相似甚至错别字的问法。</p>
+<h2 id="更多想象空间"><a href="#更多想象空间" class="headerlink" title="更多想象空间"></a>更多想象空间</h2><p>按照这种思想进行编程，很多用户的交互方式都可以改变。我觉得大部分的web界面都可以被替换成自然语言的交互方式。<br>由AI识别用户的意图，然后转换成程序可以理解的指令，然后程序执行指令调用api，替代人类在界面上的鼠标点击操作。<br>然后将结果返回给用户。比如低代码平台需要用户在web界面各种点击编辑操作，现在可以试试通过这种思想让用户在web界面的操作变成自然语言的交互方式。<br>想象一下，产品人员对着对话框输入一段语音，用自然语言描述需求，如：“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”。<br>然后AI将语音转文字后识别出用户的意图，将意图转成程序可以理解的指令，然后程序执行指令，调用低代码平台的接口，生成对应的页面，将页面<br>部署到测试环境，返回该页面的链接给产品人员。产品人员就可以直接在浏览器里看到自己定制的页面了，这效率得提升多少倍。<br>再想象一下，如果在和甲方沟通需求时，直接将需求输入对话框，几秒钟后就可以看到对应的页面了。当面和甲方确认需求，这样的沟通需求也将变成已经轻松的事。<br>这就是我所说的面向ai编程将带来的变革，他不是取代某个岗位，而是改变了某个岗位的工作方式，让某个岗位的工作效率提升了几十倍，几百倍。运用思想，把ai当高材生的朋友，<br>充分利用它的能力才是这个新时代要做的事情。</p>
+<h2 id="深入细节实现“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”"><a href="#深入细节实现“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”" class="headerlink" title="深入细节实现“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”"></a>深入细节实现“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”</h2><p>其实用户很难一下子描述清楚自己的需求，而AI此时应该做更多的事情，它要充当一个产品经理，帮用户提取需求。提取完全部信息输出“已完成”<br>如：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">用户：我想查看用户购买品类的数据分布</span><br><span class="line">AI：请问您需要查看什么时间段的购买数据？</span><br><span class="line">用户：30天内吧</span><br><span class="line">AI：请问您需要展示哪些品类的数据？</span><br><span class="line">用户：所有品类</span><br><span class="line">AI：请问需要使用什么方式展示数据？</span><br><span class="line">用户：有哪些数据展示方式？</span><br><span class="line">AI：有柱状图、折线图、饼图、雷达图、散点图、地图等</span><br><span class="line">用户：我需要柱状图</span><br><span class="line">AI：我在已经在这个页面生成了你要的柱状图，你可以点击这个链接查看：&#123;***&#125;</span><br><span class="line">用户：好的，谢谢</span><br></pre></td></tr></table></figure>
+<p>这样完全可以让AI通过一步步引导，了解用户的真实意图和需求，然后转换和执行程序可以理解的指令，生成对应的页面。<br>有人要问怎么实现上面的AI追问？这个不需要花699买课程，这只是一个简单的提示词：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">你是一个管理后台的产品经理，你需要对以下“对话过程”进行分析，然后按以下要求提取以下信息，如果没有提取到指定信息则生成一句回复，引导用户说出该信息：</span><br><span class="line">要求1：判断用户是否需要生成一个页面</span><br><span class="line">要求2：获取用户需要展示的数据</span><br><span class="line">要求3：获取用户对展示数据的要求</span><br><span class="line">要求4：获取用户需要使用什么方式展示数据</span><br><span class="line">对话过程：</span><br><span class="line">&#123;***&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的提示词就可以让AI自己提取信息，自己生成回复，自己引导用户说出信息。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>面向AI编程是一种思想，这种思想告诉我们，不只让AI帮你写代码，还要让AI帮你完成软件的某些功能，<br>不要只想着界面上几个按钮让用户点点点，而是让AI识别用户的意图，帮用户完成某些操作。<br>对于用户来说动嘴总比动手来得简单，这种思想需要程序员多多开发AI在程序中所能承担的角色和功能，<br>需要产品将人机交互的方式转换成人人交互的方式，把AI当人。</p>
+<p><strong>完</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://nathanhex.github.io/CICD-Practice">老黄</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nathanhex.github.io/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/">https://nathanhex.github.io/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nathanhex.github.io/CICD-Practice" target="_blank">老丶黄的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/CICD-Practice/tags/openai/">openai</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/CICD-Practice/2024/03/30/stt/" title="利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/CICD-Practice/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字</div></div></a></div><div class="next-post pull-right"><a href="/CICD-Practice/2023/03/05/mstts/" title="基于微软的免费的接近真人效果的TTS java实现"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/CICD-Practice/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">基于微软的免费的接近真人效果的TTS java实现</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/CICD-Practice/2023/03/04/chatgpt-demo/" title="openai gpt-3.5-turbo新模型java demo"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-04</div><div class="title">openai gpt-3.5-turbo新模型java demo</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/CICD-Practice/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">老黄</div><div class="author-info__description">天生我材必有用，千金散尽还复来</div></div><div class="card-info-data site-data is-center"><a href="/CICD-Practice/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/CICD-Practice/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/CICD-Practice/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/nathanhex"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%84%A6%E8%99%91%E7%97%87"><span class="toc-number">1.</span> <span class="toc-text">AI焦虑症</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%BC%93%E8%A7%A3AI%E7%84%A6%E8%99%91%E7%97%87"><span class="toc-number">2.</span> <span class="toc-text">如何缓解AI焦虑症</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91AI%E7%BC%96%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">什么是面向AI编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8AI%E8%83%BD%E5%8A%9B%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.1.</span> <span class="toc-text">利用AI能力示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%88%87%E6%8D%A2"><span class="toc-number">3.1.1.</span> <span class="toc-text">程序实现机器人切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%88%87%E6%8D%A2"><span class="toc-number">3.1.2.</span> <span class="toc-text">AI实现机器人切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.2.</span> <span class="toc-text">其他应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E6%83%B3%E8%B1%A1%E7%A9%BA%E9%97%B4"><span class="toc-number">3.3.</span> <span class="toc-text">更多想象空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5%E7%BB%86%E8%8A%82%E5%AE%9E%E7%8E%B0%E2%80%9C%E6%88%91%E9%9C%80%E8%A6%81%E6%9C%89%E4%B8%AA%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%80%E8%BF%9130%E5%A4%A9%E7%94%A8%E6%88%B7%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%93%81%E7%B1%BB%E5%88%86%E5%B8%83%E6%95%B0%E6%8D%AE%E6%9F%B1%E7%8A%B6%E5%9B%BE%E2%80%9D"><span class="toc-number">3.4.</span> <span class="toc-text">深入细节实现“我需要有个页面显示最近30天用户的购买品类分布数据柱状图”</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2024/03/30/stt/" title="利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字"/></a><div class="content"><a class="title" href="/CICD-Practice/2024/03/30/stt/" title="利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字">利用openai开源语音识别模型whipser，自建stt服务，替代讯飞和百度的语音转文字</a><time datetime="2024-03-29T16:00:00.000Z" title="发表于 2024-03-30 00:00:00">2024-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/" title="面向AI编程"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="面向AI编程"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/06/25/%E9%9D%A2%E5%90%91ai%E7%BC%96%E7%A8%8B/" title="面向AI编程">面向AI编程</a><time datetime="2023-06-24T16:00:00.000Z" title="发表于 2023-06-25 00:00:00">2023-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/03/05/mstts/" title="基于微软的免费的接近真人效果的TTS java实现"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="基于微软的免费的接近真人效果的TTS java实现"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/03/05/mstts/" title="基于微软的免费的接近真人效果的TTS java实现">基于微软的免费的接近真人效果的TTS java实现</a><time datetime="2023-03-04T16:00:00.000Z" title="发表于 2023-03-05 00:00:00">2023-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/03/04/chatgpt-demo/" title="openai gpt-3.5-turbo新模型java demo"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="openai gpt-3.5-turbo新模型java demo"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/03/04/chatgpt-demo/" title="openai gpt-3.5-turbo新模型java demo">openai gpt-3.5-turbo新模型java demo</a><time datetime="2023-03-03T16:00:00.000Z" title="发表于 2023-03-04 00:00:00">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CICD-Practice/2023/02/05/%E5%9F%BA%E4%BA%8Ejenkins+kubernetes%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%90%AD%E5%BB%BA/" title="基于jenkins+kubernetes的持续集成流水线搭建"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/CICD-Practice/img/404.jpg'" alt="基于jenkins+kubernetes的持续集成流水线搭建"/></a><div class="content"><a class="title" href="/CICD-Practice/2023/02/05/%E5%9F%BA%E4%BA%8Ejenkins+kubernetes%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%90%AD%E5%BB%BA/" title="基于jenkins+kubernetes的持续集成流水线搭建">基于jenkins+kubernetes的持续集成流水线搭建</a><time datetime="2023-02-04T16:00:00.000Z" title="发表于 2023-02-05 00:00:00">2023-02-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 老黄</div><div class="footer_custom_text">欢迎来到老黄的<a href="https://nathanhex.github.io/CICD-Practice/">博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/CICD-Practice/js/utils.js"></script><script src="/CICD-Practice/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
